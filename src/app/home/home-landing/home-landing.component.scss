@@ -1,0 +1,33 @@
+.landingMaincontainer {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Ubuntu Mono';
+    flex-direction: column;
+}
+
+.circular {
+    margin-left: 6px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+@-moz-document url-prefix() {
+    .circular {
+        margin-left: 18px !important;
+    }
+    .landingTextContainer {
+        margin-left: 18px !important;
+    }
+}
+
+.landingTextContainer {
+    display: flex;
+    height: 48px;    
+    margin-left: 6px;
+    
+    h3 {
+        margin: 0px;
+    }
+}

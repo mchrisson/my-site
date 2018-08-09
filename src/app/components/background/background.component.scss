@@ -1,0 +1,135 @@
+//@import 'color';
+
+@mixin p-abs-trans-center($wid) {
+	display: block;
+	position: absolute;
+	width: #{$wid};
+	padding-bottom: #{$wid};
+	border-radius: 50%;
+	top: calc(50% - #{$wid}/2);
+	left: calc(50% - #{$wid}/2);
+	transform-origin: center center;
+	box-sizing: content-box !important;
+}
+
+$circleColor: #ffffff44;
+
+.awesome-back {
+	box-sizing: content-box !important;
+	position: fixed;
+	z-index: -10;
+	display: block;
+	top: 0; bottom: 0;
+	left: 0; right: 0;
+	
+	.circle-container {
+		perspective: 1000px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		padding-bottom: 100%;
+		transform-style: preserve-3d;
+		box-sizing: content-box !important;
+
+		.rotator{
+			position: absolute;
+			box-sizing: content-box !important;
+			top: 0px; bottom: 0px;
+			left: 0px; right: 0px;
+			transform-style: preserve-3d;
+			// perspective: 1000px;
+			// transform: rotateX(75deg);
+			// animation: rotate-main 1.6s infinite linear;
+		}
+
+		.circle-main {
+			@include p-abs-trans-center(40%);
+			border: 1.5px solid $circleColor;
+			animation: rotate-main 1.6s infinite linear;
+
+			&:before{
+				box-sizing: content-box;
+				content: '';
+				position: absolute;
+				width: 14px;
+				height: 14px;
+				border-radius: 50%;
+				top: 50%;
+				left: -7px;
+      }
+		}
+
+		.circle-inner {
+			@include p-abs-trans-center(10%);
+			border: 0.5px solid $circleColor;
+			animation: rotate-main 1.6s infinite linear;
+
+			&:before{
+				box-sizing: content-box;
+				content: '';
+				position: absolute;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				top: -5px;
+				left: 50%;
+      }
+		}
+
+		.circle-outer {
+			@include p-abs-trans-center(80%);
+			border: 2px solid $circleColor;
+			animation: rotate-main 1.6s infinite linear;
+
+			&:before{
+				box-sizing: content-box;
+				content: '';
+				position: absolute;
+				width: 16px;
+				height: 16px;
+				border-radius: 50%;
+				top: calc(100% - 8px);
+				left: calc(50% - 8px);
+      }
+		}
+	}
+}
+
+/* Animations */
+@keyframes rotate-main {
+	0% {
+	  transform: rotateZ(0deg);
+	}
+	50% {
+	  transform: rotateZ(180deg);
+	}
+	100% {
+	  transform: rotateZ(360deg);
+	}
+}
+
+@keyframes scale-main {
+	0% {
+	  transform: scale(1, 1);
+	}
+	50% {
+	  transform: scale(1.5, 1.5);
+	}
+	100% {
+	  transform: scale(0.2, 0.2);
+	}
+}
+
+@keyframes scale-sec {
+	0% {
+	  transform: scale(1, 1);
+	}
+	50% {
+	  transform: scale(1.9, 1.9);
+	}
+	100% {
+	  transform: scale(2.8, 2.8);
+	}
+}

@@ -1,0 +1,33 @@
+:host {
+    height: calc(100% - 56px);
+    overflow-y: auto;
+    overflow-x: hidden !important;
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+app-background {
+    position: fixed;
+    top: 0px; bottom: 0px;
+    left: 0px; right: 0px;
+}
+
+home-header {
+    position: sticky;
+    top: 0px;
+}
+
+app-home-landing {
+    box-sizing: content-box;
+    height: 100%;
+}
+
+app-home-main{
+    height: 100%;
+}

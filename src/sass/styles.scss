@@ -1,0 +1,95 @@
+/* You can add global styles to this file, and also import other style files */
+@import './variables';
+@import './mixins';
+@import './themes/themer';
+@import './themes/theme-default';
+@import url(//fonts.googleapis.com/css?family=Ubuntu+Mono);
+
+html {
+    height: 100%;
+    display: block;
+}
+
+body {
+    height: 100%;
+    * {
+        display: block;
+        -webkit-margin-before: 0px;
+        -webkit-margin-after: 0px;
+    }
+    style {
+        display: none;
+    }
+    app-root {
+        height: 100%;
+    }
+    @include themify($themes) {
+        background-color: themed('backgroundColor');  
+        color: themed('textColor');
+    }
+}
+
+.load-hidden {
+    visibility: hidden;
+}
+
+nav {
+    height: $nav-height;
+    line-height: $nav-height;
+    @include themify($themes) {
+        background-color: themed('navbarColor');
+    }
+
+    .brand-logo {
+        padding-left: 1rem;
+    }
+    @media only screen and (max-width: 992px){
+        .brand-logo {
+            padding-left: 0rem;
+        }
+    }
+}
+
+/* Typed */
+.landingMaincontainer {
+    .typed-cursor {
+        font-size: 2.92rem;
+        line-height: 110%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    h3 {
+        font-size: 1.8rem;
+    }
+    .landingMaincontainer {
+        .typed-cursor {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+/* Circles */
+.circle-main{
+    &:before{
+        @include themify($themes) {
+            background-color: themed('circleColor');
+        }
+    }
+}
+
+.circle-inner{
+    &:before{
+        @include themify($themes) {
+            background-color: themed('circleColor');
+        }
+    }
+}
+
+.circle-outer{
+    &:before{
+        @include themify($themes) {
+            background-color: themed('circleColor');
+        }
+    }
+}
