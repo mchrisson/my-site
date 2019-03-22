@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
     }
 
     requestAnimationFrame(function() {
-      ( <any> document.querySelector('.rotator')).style.transform = 'rotateX(' + event.target.scrollTop + 'deg)';
+      ( <any> document.querySelector('.rotator')).style.transform = 'rotateX(' + ( 56 + event.target.scrollTop ) + 'deg)';
     });
 
   }
