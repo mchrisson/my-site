@@ -12,11 +12,38 @@
   }
 }
 
+$skill-height: 1.562rem;
 .skills {
   display: flex;
   flex-direction: column;
+  padding: 1rem;
   .skill {
+    display: flex;
     width: 100%;
+    height: $skill-height;
+    margin-bottom: 0.781rem;
+    label {
+      width: 6.8rem;
+      text-align: center;
+      line-height: $skill-height;
+    }
+
+    .skillValueContainer {
+      width: 100%;
+      position: relative;
+      display: flex;
+      .skillValueProgress {
+        height: 100%;
+      }
+      .skillValue {
+        position: absolute;
+        right: 0px;
+        height: 100%;
+        width: 2.25rem;
+        font-size: small;
+        line-height: $skill-height;
+      }
+    }
   }
 }
 

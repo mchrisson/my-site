@@ -1,7 +1,2 @@
 $nav-height : 56px;
 $roboto-font-path: "./fonts/roboto/";
-body{
-  @include themify($themes) {
-    $primary-color: themed('navbarColor');  
-  }
-}

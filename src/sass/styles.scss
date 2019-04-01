@@ -177,3 +177,18 @@ app-home {
     padding-top: $nav-height;
   }
 }
+
+/* home-main */
+.skill {
+  @include themify($themes) {
+    background-color: themed('greyColor');
+
+    label {
+      @extend .white-text;
+      background-color: themed('skillsColor');
+    }
+    .skillValueProgress {
+      background-color: lighten(themed('skillsColor'), 18%);
+    }
+  }
+}

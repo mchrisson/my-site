@@ -2,7 +2,7 @@
   <div class="section-container">
     <div class="row">
       <div class="col l6 s12">
-        <div class="info">
+        <div class="info" appScrollReveal container="app-home" direction="left" delay="600" duration="1000">
           <div class="card grey lighten-4 circular"></div> 
           <div class="info-details">
             <h5 class="detail-heading">What I do?</h5>
@@ -11,13 +11,12 @@
         </div>
       </div>
       <div class="col l6 s12">
-        <div class="skills">
-          <div class="skill">
-            <a class="waves-effect waves-light btn primary">button</a>
-            <label for="skillName">CSS</label>
+        <div class="skills" appScrollReveal container="app-home" direction="right" delay="600" duration="1000" (reveal)="onSkillsReveal()">
+          <div class="skill" *ngFor="let skill of skills">
+            <label for="skillName">{{skill.name}}</label>
             <div class="skillValueContainer">
-              <span class="skillValueProgress"></span>
-              <span class="skillValue"></span>
+              <span class="skillValueProgress" [@expand]="{value: 'to', params: { width: skill.value, duration: getDuration(skill.value)} }"></span>
+              <span class="skillValue">{{skill.value}}</span>
             </div>
           </div>
         </div>

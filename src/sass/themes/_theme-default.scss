@@ -6,6 +6,8 @@ $themes: (
       backgroundColor: linear-gradient(to bottom right, #f9e2ff, #1d1d1d),
       textColor: #ffffff,
       circleColor: #eeeeeeee,
+      skillsColor: rgb(70, 25, 107),
+      greyColor: #eeeeeeee,
     ),
     dark: (
       navbarColor: rgb(55, 17, 87),
@@ -13,5 +15,7 @@ $themes: (
       backgroundColor: #222,
       textColor: #ddd,
       circleColor: #eeeeeeee,
+      skillsColor: rgb(70, 25, 107),
+      greyColor: #eeeeeeee,
     ),
   );
