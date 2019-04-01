@@ -12,6 +12,7 @@ export class BackgroundComponent implements OnInit {
   @ViewChild('bgCanvas') bgCanvas: ElementRef;
   canvas: ElementRef['nativeElement'];
   ctx;
+  frameCount = 0;
 
   ngOnInit() {
     this.canvasInit();
@@ -34,7 +35,19 @@ export class BackgroundComponent implements OnInit {
     this.canvasDraw();
   }
 
+  rePaint() {
+    requestAnimationFrame(() => {
+      console.log(this.frameCount);
+      if (this.frameCount % 10 === 0) {
+        this.canvasDraw();
+      }
+      this.frameCount = ( this.frameCount + 1 ) % 60;
+      this.rePaint();
+    });
+  }
+
   canvasDraw() {
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     // this.ctx.beginPath();
     // this.ctx.arc(100, 100, 50, 0, Math.PI * 2, false); // Earth orbit
     // this.ctx.stroke();
@@ -56,7 +69,7 @@ export class BackgroundComponent implements OnInit {
     for (let j = -50; j < this.canvas.height + 150; j = this.getRandomBetween(j + 60, j + 100)) {
       const row = [];
       for (let i = -50; i <= this.canvas.width + 250; i = this.getRandomBetween(i + 80, i + 150)) {
-        const cj = this.getRandomBetween(j - 20, j + 50);
+        const cj = this.getRandomBetween(j - 10, j + 50);
         // this.ctx.beginPath();
         // this.ctx.arc(i, cj, 2, 0, 2 * Math.PI);
         // this.ctx.fill();

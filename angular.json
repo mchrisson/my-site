@@ -27,7 +27,6 @@
               "src/assets"
             ],
             "styles": [
-							"./node_modules/materialize-css/dist/css/materialize.css",
               "src/sass/styles.scss"
             ],
 						"stylePreprocessorOptions": {

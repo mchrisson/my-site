@@ -5,4 +5,43 @@
 
 .cust-navbar {
     transition: background-color 0.3s ease, box-shadow 0.5s ease;
+
+    >.nav-wrapper, & {
+      border-bottom-left-radius: 13px;
+      border-bottom-right-radius: 13px;
+    }
+    >.nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      position: relative;
+    }
+}
+:host {
+  position: relative;
+  z-index: 100;
+  border-bottom-left-radius: 13px;
+  border-bottom-right-radius: 13px;
+}
+
+.sidenav {
+  position: fixed;
+  z-index: 1000;
+  top: 0px;
+  right: 0px;
+  height: 100vh;
+  margin: 0px !important;
+  ul{
+    padding: 1.5rem 0rem;
+    li {
+      display: block;
+      a {
+        color: #fff;
+        padding: 0.5rem 3rem;
+        width: 100%;
+      }
+    }
+  }
 }

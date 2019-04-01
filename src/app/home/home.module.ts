@@ -7,6 +7,8 @@ import { HomeComponent } from './home.component';
 import { HomeLandingComponent } from './home-landing/home-landing.component';
 import { HomeMainComponent } from './home-main/home-main.component';
 import { ScrollRevealDirective } from '../directives/scroll-reveal.directive';
+import { HomeSecComponent } from './home-sec/home-sec.component';
+import { HomeFooterComponent } from './home-footer/home-footer.component';
 
 @NgModule({
   imports: [
@@ -14,6 +16,6 @@ import { ScrollRevealDirective } from '../directives/scroll-reveal.directive';
     HomeRoutingModule
   ],
   exports: [HomeRoutingModule, ScrollRevealDirective],
-  declarations: [HomeComponent, HomeLandingComponent, HomeMainComponent, ScrollRevealDirective]
+  declarations: [HomeComponent, HomeLandingComponent, HomeMainComponent, ScrollRevealDirective, HomeSecComponent, HomeFooterComponent]
 })
 export class HomeModule { }
