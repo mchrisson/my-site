@@ -1,8 +1,12 @@
 <section class="white card margin-0 h-100 grey-text text-darken-4">
+  <div class="section-header">
+    <h4 #sectionHeader appScrollReveal container="app-home" direction="left" delay="0" duration="0" (reveal)="onHeaderReveal()"></h4>
+    <span *ngIf="showDash" class="dash" [@expand]="{value: 'to', params: { width: '80px', duration: '0.3'} }"></span>
+  </div>
   <div class="section-container">
     <div class="row">
       <div class="col l6 s12">
-        <div class="info" appScrollReveal container="app-home" direction="left" delay="600" duration="1000">
+        <div class="info" appScrollReveal container="app-home" direction="left" delay="1600" duration="1000">
           <div class="card grey lighten-4 circular"></div> 
           <div class="info-details">
             <h5 class="detail-heading">What I do?</h5>
@@ -11,7 +15,7 @@
         </div>
       </div>
       <div class="col l6 s12">
-        <div class="skills" appScrollReveal container="app-home" direction="right" delay="600" duration="1000" (reveal)="onSkillsReveal()">
+        <div class="skills" appScrollReveal container="app-home" direction="right" delay="1600" duration="1000" (reveal)="onSkillsReveal()">
           <div class="skill" *ngFor="let skill of skills">
             <label for="skillName">{{skill.name}}</label>
             <div class="skillValueContainer">

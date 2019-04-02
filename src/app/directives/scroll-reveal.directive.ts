@@ -8,13 +8,14 @@ export class ScrollRevealDirective implements AfterContentInit, OnDestroy {
   @Input() direction: string;
   @Input() delay: string;
   @Input() duration: string;
+  @Input() distance: string;
   @Output() reveal = new EventEmitter();
 
   constructor(private el: ElementRef) {}
 
   ngAfterContentInit() {
     (<any> window).ScrollReveal().reveal(this.el.nativeElement, {
-      distance: '150%',
+      distance: this.distance || '150%',
       origin: this.direction || 'left',
       delay: parseInt(this.delay, 10) || 100,
       duration: parseInt(this.duration, 10) || 600,

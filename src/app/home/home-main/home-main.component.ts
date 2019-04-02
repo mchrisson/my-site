@@ -1,18 +1,14 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import animations from 'src/app/animations/animations';
 
 @Component({
   selector: 'app-home-main',
   templateUrl: './home-main.component.html',
   styleUrls: ['./home-main.component.scss'],
-  animations: [
-    trigger('expand', [
-      state('to', style({ width: '{{width}}'}), { params: {width: '0px'}}),
-      transition('* => to', [animate('{{duration}}s ease-in')], { params: {duration: '1'}})
-    ])
-  ]
+  animations: animations
 })
-export class HomeMainComponent implements OnInit, AfterViewInit {
+export class HomeMainComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor() { }
   skills = [
@@ -27,12 +23,28 @@ export class HomeMainComponent implements OnInit, AfterViewInit {
     { name: 'FL Studio', value: '0%' },
     { name: 'Premiere', value: '0%' },
   ];
+  @ViewChild('sectionHeader') sectionHeader: ElementRef;
+  typed: any;
+  showDash = false;
 
   ngOnInit() {
   }
 
   ngAfterViewInit() {
   }
+
+  onHeaderReveal() {
+    const sectionHeaderTypedOptions = {
+      strings: ['WHOAMI'],
+      typeSpeed: 80,
+      backSpeed: 0,
+      smartBackspace: false,
+      showCursor: false,
+      onComplete: (_) => { this.showDash = true; }
+    };
+    this.typed = new (<any>window).Typed(this.sectionHeader.nativeElement, sectionHeaderTypedOptions);
+  }
+
   onSkillsReveal() {
     this.skills = [
       { name: 'HTML', value: '88%' },
@@ -50,5 +62,9 @@ export class HomeMainComponent implements OnInit, AfterViewInit {
 
   getDuration(val) {
     return (parseInt(val.replace('%', ''), 10) / 160) + '';
+  }
+
+  ngOnDestroy() {
+    this.typed.destroy();
   }
 }
