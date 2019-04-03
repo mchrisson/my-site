@@ -1,4 +1,5 @@
 .landingMaincontainer {
+    position: relative;
     height: 100%;
     display: flex;
     align-items: center;
@@ -8,7 +9,7 @@
 }
 
 .circular {
-    margin-left: 6px;
+    margin-left: 8px;
     margin-top: -12px;
     width: 100px;
     height: 100px;
@@ -31,4 +32,29 @@
     h3 {
         margin: 0px;
     }
+}
+
+.chevronbox {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+.chevron {
+  position: absolute;
+  bottom: 6%;
+  animation: jump 0.3s ease-in-out infinite alternate;
+  .left {
+    @extend .chevronbox;
+    transform: skewY(30deg);
+    border-right: none;
+  }
+  .right {
+    @extend .chevronbox;
+    transform: skewY(-30deg);
+    border-left: none;
+  }
+}
+
+@keyframes jump {
+  from { transform: translateY(-50%); }
+  to { transform: translateY(0%); }
 }

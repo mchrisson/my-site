@@ -55,7 +55,7 @@ export class BackgroundComponent implements OnInit {
     for (let i = -100; i <= this.canvas.height + 50; i += 50) {
       for (let j = -100; j < this.canvas.width + 50; j += 50) {
         const color: number = i * j / normDenom + 80;
-        this.ctx.fillStyle = 'rgba(' + (color + 20 ) + ', ' + ( 125 - color ) + ', ' + (320 - color) + ', 0.02)';
+        this.ctx.fillStyle = 'rgba(' + (color /* + 20 */ ) + ', ' + ( /* 125 - */ color ) + ', ' + (/* 320 - */ color) + ', 0.02)';
         this.ctx.beginPath();
         this.ctx.moveTo(i, j);
         this.ctx.lineTo(j, i);

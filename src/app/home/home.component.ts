@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit, AfterContentInit {
   draw() {
     requestAnimationFrame(() => {
       ( <any> document.querySelector('.rotator')).style.transform = 'rotateY(' + ( this.angle ) + 'deg)';
-      ( <any> document.querySelector('.rotator')).style.transform += ' rotateX(' + ( 56 + this.scrollTop / 5 ) + 'deg)';
+      ( <any> document.querySelector('.rotator')).style.transform += ' rotateX(' + ( 56 + this.scrollTop / 6 ) + 'deg)';
       ( <any> document.querySelector('.rotator')).style.transform += ' translateY(-' + ( this.scrollTop / 4 ) + '%)';
       // lax.update(event.target.scrollTop);
     });

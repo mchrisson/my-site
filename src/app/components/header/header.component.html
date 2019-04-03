@@ -5,6 +5,11 @@
       <li class="waves-effect waves-dark"><a href="#landing">yolo</a></li>
       <li class="waves-effect waves-dark"><a href="#whoami">whoami</a></li>
       <li class="waves-effect waves-dark"><a href="#contact">ping.me</a></li>
+      <li class="color-picker-trigger">
+        <a materialize="dropdown" data-activates="color-picker" class="waves-effect waves-dark">
+          <i class="material-icons">format_color_fill</i>
+        </a>
+      </li>
     </ul>
     <a materialize="sideNav" [materializeParams]="[options]" data-activates="mobile-nav" class="sidenav-trigger hide-on-large-only"><i class="material-icons">menu</i></a>
   </div>
@@ -15,4 +20,10 @@
       <li class="waves-effect waves-dark"><a href="#whoami">whoami</a></li>
       <li class="waves-effect waves-dark"><a href="#contact">ping.me</a></li>
   </ul>
+</div>
+<div id="color-picker" class="color-picker" [style.display]="'none'">
+  <a><i class="material-icons">fiber_manual_record</i></a>
+  <a><i class="material-icons">fiber_manual_record</i></a>
+  <a><i class="material-icons">fiber_manual_record</i></a>
+  <a><i class="material-icons">fiber_manual_record</i></a>
 </div>
