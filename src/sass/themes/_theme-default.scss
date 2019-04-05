@@ -1,7 +1,7 @@
 
 $themes: (
     light: (
-      navbarColor: rgb(106, 39, 160),
+      navbarColor: #6a27a0,
       navbarTextColor: #ffffff,
       backgroundColor: linear-gradient(to bottom right, #f9e2ff, #1d1d1d),
       textColor: #ffffff,
@@ -14,8 +14,8 @@ $themes: (
                             inset 0 0 0px 20vw black),
       recordLabelBoxShadow: inset 0px 0px 0px 8.873vw #563671,
     ),
-    dark: (
-      navbarColor: rgb(55, 17, 87),
+    purple: (
+      navbarColor: #371157,
       navbarTextColor: #fff,
       backgroundColor: #222,
       textColor: #ddd,

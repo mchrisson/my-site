@@ -49,10 +49,11 @@ $circleColor: #000;
 			top: 0px; bottom: 0px;
 			left: 0px; right: 0px;
 			transform-style: preserve-3d;
-			transform: rotateX(54deg);
+			transform: rotateY(-11deg) rotateX(56deg) translateY(0%);;
 			// perspective: 1000px;
 			// transform: rotateX(75deg);
-			// animation: rotate-main 1.6s infinite linear;
+      // animation: rotate-main 1.6s infinite linear;
+      animation: record-enter 0.6s ease-in;
 		}
 
 		.circle-main {
@@ -62,7 +63,7 @@ $circleColor: #000;
                   inset 0 0 0px 10.04vw black;
 			@include p-abs-trans-center(40%);
 			border: 1.5px solid $circleColor;
-			animation: rotate-main 1.6s infinite linear;
+			animation: rotate-main 3s infinite linear;
 
 			&:before{
 				box-sizing: content-box;
@@ -81,7 +82,7 @@ $circleColor: #000;
       // @include p-abs-trans-center(10%);
 			@include p-abs-trans-center(20%);
 			border: 0.5px solid $circleColor;
-			animation: rotate-main 1.6s infinite linear;
+			animation: rotate-main 3s infinite linear;
 
 			&:before{
 				box-sizing: content-box;
@@ -102,7 +103,7 @@ $circleColor: #000;
                   inset 0 0 0px 275px black; */
       @include p-abs-trans-center(80%);
 			border: 0.1px solid $circleColor;
-			animation: rotate-main 1.6s infinite linear;
+			animation: rotate-main 3s infinite linear;
 
 			&:before{
 				box-sizing: content-box;
@@ -153,6 +154,11 @@ $circleColor: #000;
 	100% {
 	  transform: scale(2.8, 2.8);
 	}
+}
+
+@keyframes record-enter {
+  from { transform: rotateY(-11deg) rotateX(134deg) translateY(-117%); }
+  to { transform: rotateY(-11deg) rotateX(56deg) translateY(0%); }
 }
 
 .record-label {

@@ -1,0 +1,5 @@
+<div class="section-header">
+  <h4 #sectionHeader appScrollReveal container="app-home" direction="left" delay="0" duration="0" (reveal)="onHeaderReveal()"></h4>
+  <span *ngIf="showDash" class="dash" [@expand]="{value: 'to', params: { width: '80px', duration: '0.3'} }"></span>
+  <span *ngIf="!showDash" class="dash-whitespace"></span>
+</div>

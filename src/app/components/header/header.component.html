@@ -22,8 +22,7 @@
   </ul>
 </div>
 <div id="color-picker" class="color-picker" [style.display]="'none'">
-  <a><i class="material-icons">fiber_manual_record</i></a>
-  <a><i class="material-icons">fiber_manual_record</i></a>
-  <a><i class="material-icons">fiber_manual_record</i></a>
-  <a><i class="material-icons">fiber_manual_record</i></a>
+  <a *ngFor="let theme of themes" (click)="onSelectTheme(theme)" [ngClass]="{active: theme.class === getCurrentTheme()}">
+    <i [style.color]="theme.color" class="material-icons">fiber_manual_record</i>
+  </a>
 </div>

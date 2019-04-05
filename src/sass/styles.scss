@@ -145,11 +145,18 @@ section {
     flex-direction: column;
     h4 {
       margin-bottom: 0.5rem;
+      height: 2.28rem;
     }
     .dash {
       height: 3px;
       // width: 100%;
-      @extend .grey;
+      // @extend .grey;
+      @include themify($themes) {
+        background-color: lighten(themed('navbarColor'), 16%);
+      }
+    }
+    .dash-whitespace {
+      height: 3px;
     }
   }
   .section-container {

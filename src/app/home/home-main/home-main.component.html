@@ -1,8 +1,10 @@
 <section class="white card margin-0 h-100 grey-text text-darken-4">
-  <div class="section-header">
+  <!-- <div class="section-header">
     <h4 #sectionHeader appScrollReveal container="app-home" direction="left" delay="0" duration="0" (reveal)="onHeaderReveal()"></h4>
     <span *ngIf="showDash" class="dash" [@expand]="{value: 'to', params: { width: '80px', duration: '0.3'} }"></span>
-  </div>
+    <span *ngIf="!showDash" class="dash-whitespace"></span>
+  </div> -->
+  <app-section-header [text]="'WHOAMI'"></app-section-header>
   <div class="section-container">
     <div class="row">
       <div class="col l6 s12">

@@ -23,9 +23,6 @@ export class HomeMainComponent implements OnInit, AfterViewInit, OnDestroy {
     { name: 'FL Studio', value: '0%' },
     { name: 'Premiere', value: '0%' },
   ];
-  @ViewChild('sectionHeader') sectionHeader: ElementRef;
-  typed: any;
-  showDash = false;
 
   ngOnInit() {
   }
@@ -33,17 +30,6 @@ export class HomeMainComponent implements OnInit, AfterViewInit, OnDestroy {
   ngAfterViewInit() {
   }
 
-  onHeaderReveal() {
-    const sectionHeaderTypedOptions = {
-      strings: ['WHOAMI'],
-      typeSpeed: 80,
-      backSpeed: 0,
-      smartBackspace: false,
-      showCursor: false,
-      onComplete: (_) => { this.showDash = true; }
-    };
-    this.typed = new (<any>window).Typed(this.sectionHeader.nativeElement, sectionHeaderTypedOptions);
-  }
 
   onSkillsReveal() {
     this.skills = [
@@ -65,6 +51,5 @@ export class HomeMainComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.typed.destroy();
   }
 }
