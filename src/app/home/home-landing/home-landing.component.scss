@@ -46,11 +46,13 @@
     @extend .chevronbox;
     transform: skewY(30deg);
     border-right: none;
+    margin-right: -0.5px;
   }
   .right {
     @extend .chevronbox;
     transform: skewY(-30deg);
     border-left: none;
+    margin-left: -0.5px;
   }
 }
 

@@ -1,1 +1,1 @@
-code .. && ng serve -o
+code . && ng serve -o

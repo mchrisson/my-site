@@ -1,24 +1,30 @@
 <section class="margin-0 h-100">
   <app-section-header [text]="'PROJECTS'"></app-section-header>
-  <div class="section-container">
-    <div class="row">
-      <div class="col l4 s12">
-        <div class="card cust-card load-hidden" appScrollReveal container="app-home" delay="600" duration="1000">
-          <div class="card-content"></div>
-        </div>
-      </div>
-      <div class="col l4 s12">
-        <div class="card cust-card load-hidden" appScrollReveal container="app-home" direction="bottom" delay="800" duration="1000">
-          <div class="card-content"></div>
-        </div>
-      </div>
-      <div class="col l4 s12">
-        <div class="card cust-card load-hidden" appScrollReveal container="app-home" direction="right" delay="600" duration="1000">
-            <div class="card-content"></div>
+  <div class="section-container grey-text text-darken-4">
+    <div #carousel class="carousel row" [ngClass]="{ 'initialized': showInitialized }"
+      materialize="carousel" [materializeParams]="[{dist	: -30, numVisible: 3}]" [materializeActions]="actions">
+      <div class="carousel-item col xl4 l5 m6 s10" *ngFor="let project of projectsDataList">
+        <div class="white card project-card">
+          <div class="card-content">
+              <span class="card-title">{{project.title}}</span>
+              <p>{{project.description}}</p>
+          </div>
+          <div class="card-footer">
+            <a class="activator">Read more</a>
+          </div>
+          <div class="card-reveal cust-scroll">
+            <span class="card-title"><i class="material-icons right">close</i></span>
+            <div class="details">
+                <label>Role:</label><span>{{project.role}}</span>
+                <label class="respo-label">Responsibility:</label>
+                <ul class="collection respo-list">
+                  <li class="collection-item" *ngFor="let resp of project.responsibilities">{{resp}}</li>
+                </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="lax" data-lax-preset="spin fadeInOut">Look at me goooooo!</div>
   </div>
 </section>
 

@@ -126,6 +126,10 @@ nav {
   height: 100%;
 }
 
+.w-100 {
+  width: 100%;
+}
+
 .margin-0 {
   margin: 0px !important;
 }
@@ -184,10 +188,7 @@ section {
 }
 
 /* scrolling */
-.scroll-snap-container, app-home {
-  scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
-  scroll-snap-stop: always;
+.cust-scroll {
   &::-webkit-scrollbar {
     @extend .hide-on-med-and-down;
     width: 8px;
@@ -200,6 +201,12 @@ section {
       background-color: themed('navbarColor');
     }
   }
+}
+.scroll-snap-container, app-home {
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+  scroll-snap-stop: always;
+  @extend .cust-scroll;
 }
 
 .as-section-end {
@@ -242,6 +249,17 @@ app-home {
     border: 2px solid #191919;
     @include themify($themes) {
       background: themed('navbarColor');
+    }
+  }
+}
+
+/* home-sec */
+.project-card {
+  .card-footer {
+    a {
+      @include themify($themes) {
+        color: themed('navbarColor');
+      }
     }
   }
 }

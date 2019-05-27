@@ -1,0 +1,55 @@
+.project-card {
+  .card-content {
+    height: 225px;
+  }
+  .card-content, .card-reveal {
+    padding: 1rem 1.6rem;
+    // text-align: center;
+    .card-title {
+      margin-bottom: 1.2rem;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+  }
+  .card-footer {
+    padding: 0rem 1.6rem;
+    padding-bottom: 0.8rem;
+    display: flex;
+    justify-content: flex-end;
+
+    a {
+      display: inline;
+      cursor: pointer;
+    }
+  }
+
+  .card-reveal {
+    .card-title {
+      position: absolute;
+      right: 10px;
+    }
+  }
+
+  .respo-label {
+    margin-top: 5px;
+    margin-bottom: 2px;
+  }
+  .respo-list {
+    margin: 0px;
+    border: none;
+    li {
+      font-size: 0.8rem;
+      padding: 3px;
+      line-height: 1.5;
+    }
+  }
+}
+.carousel .carousel-item {
+  height: auto !important;
+  // width: 450px;
+}
+
+.section-container {
+  width: 90%;
+}
