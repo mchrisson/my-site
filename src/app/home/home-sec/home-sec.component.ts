@@ -1,6 +1,8 @@
-import { Component, OnInit, ViewChild, EventEmitter, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import { data as projectData } from '../../data/projects.data';
 import { Project } from 'src/app/interfaces/project';
+
+declare var M: any;
 
 @Component({
   selector: 'app-home-sec',
@@ -9,24 +11,20 @@ import { Project } from 'src/app/interfaces/project';
 })
 export class HomeSecComponent implements OnInit, AfterViewInit {
 
-  @ViewChild('carousel') carouselElement; 
-  actions = new EventEmitter<string>();
+  @ViewChild('carousel') carouselElement: ElementRef; 
 
   constructor() {
   }
-  showInitialized = false;
 
   projectsDataList: Project[] = projectData;
+
+  carouselOptions = {dist	: -30, numVisible: 3};
 
   ngOnInit() {
   }
 
   ngAfterViewInit() {
-    window.setTimeout(() => {
-      this.projectsDataList = projectData;
-      this.carouselElement.nativeElement.classList.toggle("initialized");
-      this.actions.emit("carousel");
-    }, 2000);
+    M.Carousel.init(this.carouselElement.nativeElement, this.carouselOptions);
   }
 
 }

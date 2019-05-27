@@ -11,15 +11,12 @@ import { HomeSecComponent } from './home-sec/home-sec.component';
 import { HomeFooterComponent } from './home-footer/home-footer.component';
 import { SectionHeaderComponent } from '../components/section-header/section-header.component';
 
-import { MaterializeModule } from 'angular2-materialize';
-
 @NgModule({
   imports: [
     CommonModule,
-    HomeRoutingModule,
-    MaterializeModule
+    HomeRoutingModule
   ],
-  exports: [HomeRoutingModule, MaterializeModule, ScrollRevealDirective],
+  exports: [HomeRoutingModule, ScrollRevealDirective],
   declarations: [
     HomeComponent,
     HomeLandingComponent,

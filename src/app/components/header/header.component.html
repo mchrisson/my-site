@@ -1,27 +1,27 @@
 <nav class="navBeforeScroll cust-navbar">
   <div class="nav-wrapper">
     <a href="#" class="left brand-logo load-hidden" appScrollReveal>Logo</a>
-    <ul id="nav-mobile" class="hide-on-med-and-down">
+    <ul class="hide-on-med-and-down">
       <li class="waves-effect waves-dark"><a href="#landing">yolo</a></li>
       <li class="waves-effect waves-dark"><a href="#whoami">whoami</a></li>
       <li class="waves-effect waves-dark"><a href="#contact">ping.me</a></li>
       <li class="color-picker-trigger">
-        <a materialize="dropdown" data-activates="color-picker" class="waves-effect waves-dark">
+        <a #colorPicker data-target="color-picker" class="waves-effect waves-dark dropdown-trigger">
           <i class="material-icons">format_color_fill</i>
         </a>
       </li>
     </ul>
-    <a materialize="sideNav" [materializeParams]="[options]" data-activates="mobile-nav" class="sidenav-trigger hide-on-large-only"><i class="material-icons">menu</i></a>
+    <a data-target="mobile-nav" class="sidenav-trigger hide-on-large-only"><i class="material-icons">menu</i></a>
   </div>
 </nav>
-<div id="mobile-nav" class="cust-card sidenav">
+<div #sideNav id="mobile-nav" class="cust-card sidenav">
   <ul>
       <li class="waves-effect waves-dark"><a href="#landing">yolo</a></li>
       <li class="waves-effect waves-dark"><a href="#whoami">whoami</a></li>
       <li class="waves-effect waves-dark"><a href="#contact">ping.me</a></li>
   </ul>
 </div>
-<div id="color-picker" class="color-picker" [style.display]="'none'">
+<div id="color-picker" class="color-picker dropdown-content" [style.display]="'none'">
   <a *ngFor="let theme of themes" (click)="onSelectTheme(theme)" [ngClass]="{active: theme.class === getCurrentTheme()}">
     <i [style.color]="theme.color" class="material-icons">fiber_manual_record</i>
   </a>

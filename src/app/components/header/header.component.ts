@@ -1,5 +1,6 @@
-import { Component, OnInit, EventEmitter } from '@angular/core';
-import { MaterializeAction } from 'angular2-materialize';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+
+declare var M: any;
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -7,11 +8,10 @@ import { MaterializeAction } from 'angular2-materialize';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements AfterViewInit {
 
   constructor() { }
-  options = {
-    menuWidth: 300, // Default is 240
+  sideNavOptions = {
     edge: 'right' // Choose the horizontal origin
   };
   themes = [
@@ -20,13 +20,15 @@ export class HeaderComponent implements OnInit {
     { color: '#a42525', name: 'red', class: 'theme-red'},
   ];
 
-  modalActions = new EventEmitter<string|MaterializeAction>();
+  @ViewChild('colorPicker') colorPicker: ElementRef;
+  @ViewChild('sideNav') sideNav: ElementRef;
 
-  ngOnInit() {
+  ngAfterViewInit() {
+    M.Dropdown.init(this.colorPicker.nativeElement);
+    M.Sidenav.init(this.sideNav.nativeElement, this.sideNavOptions);
   }
 
   closeModal() {
-    this.modalActions.emit({action: 'sideNav', params: ['close']});
   }
 
   onSelectTheme(theme) {

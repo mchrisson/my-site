@@ -1,8 +1,7 @@
 <section class="margin-0 h-100">
   <app-section-header [text]="'PROJECTS'"></app-section-header>
   <div class="section-container grey-text text-darken-4">
-    <div #carousel class="carousel row" [ngClass]="{ 'initialized': showInitialized }"
-      materialize="carousel" [materializeParams]="[{dist	: -30, numVisible: 3}]" [materializeActions]="actions">
+    <div #carousel class="carousel row">
       <div class="carousel-item col xl4 l5 m6 s10" *ngFor="let project of projectsDataList">
         <div class="white card project-card">
           <div class="card-content">

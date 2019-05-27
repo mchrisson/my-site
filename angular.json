@@ -35,7 +35,6 @@
 							]
 						},
             "scripts": [
-							"./node_modules/jquery/dist/jquery.min.js",
 						  "./node_modules/hammerjs/hammer.min.js",
               "./node_modules/materialize-css/dist/js/materialize.min.js",
               "./node_modules/typed.js/lib/typed.min.js",
